@@ -1,6 +1,7 @@
 package app
 
 import (
+	"os"
 	"test-case-vhiweb/internal/config"
 	"test-case-vhiweb/internal/middlewares"
 	"test-case-vhiweb/internal/routes"
@@ -9,6 +10,9 @@ import (
 )
 
 func App() {
+	mode := os.Getenv("GIN_MODE")
+	gin.SetMode(mode)
+
 	r := gin.New()
 
 	r.Use(gin.Recovery())
