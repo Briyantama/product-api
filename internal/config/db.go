@@ -50,10 +50,10 @@ func InitDB() *gorm.DB {
 		logger.Log.Fatal(err)
 	}
 
-	// err = DropAllTables(db)
-	// if err != nil {
-	// 	logger.Log.Fatal(err)
-	// }
+	err = DropAllTables(db)
+	if err != nil {
+		logger.Log.Fatal(err)
+	}
 
 	err = CreateAllTables(db)
 	if err != nil {
